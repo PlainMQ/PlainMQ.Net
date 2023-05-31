@@ -2,10 +2,10 @@
 
 namespace PlainMQLib.Models
 {
-    internal class ThreadEvent
+    public class ThreadEvent
     {
-        internal ThreadClass Class { get; set; }
-        internal int? InitiatorID { get; set; }
-        internal object? EventPayload { get; set; }
+        public ThreadClass Class { get; set; }
+        public int? InitiatorID { get; set; }
+        public object? EventPayload { get; set; }
     }
 }
