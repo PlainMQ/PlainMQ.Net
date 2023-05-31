@@ -5,3 +5,5 @@
 /.vs/PlainMQ.Net/v17
 /PlainMQLib/obj
 /PlainMQLib/bin/Debug/net6.0
+/.vs
+/PlainMQLib/nuget.config
