@@ -12,7 +12,7 @@ namespace PlainMQLib.ThreadManagement.ThreadTypes
     /// Execution of the ThreadAction is dependent on whether the class of the GlobalEventQueue entry 
     /// matches the class of the created ManagedThread
     /// </summary>
-    public class ManagedThreadBase : IManagedThread
+    internal class ManagedThreadBase : IManagedThread
     {
         public ManagedThreadStatus Status { get; set; }
 
@@ -20,7 +20,7 @@ namespace PlainMQLib.ThreadManagement.ThreadTypes
 
         public ThreadClass InvokeClass { get; set; }
 
-        public ThreadClass CancelClass { get; } = ThreadClass.TERMINATE;
+        internal ThreadClass CancelClass { get; } = ThreadClass.TERMINATE;
 
         public int ID { get; set; }
         public string? Name { get; set; }

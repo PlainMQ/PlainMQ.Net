@@ -15,6 +15,7 @@ namespace PlainMQLib.Models
     {
         public int LENGTH;
         public byte[]? BODY;
+        public bool ISSTR;
 
         /// <summary>
         /// Used for sending the message byte array down the wire
@@ -22,10 +23,11 @@ namespace PlainMQLib.Models
         /// <returns>a byte array to send down the wire</returns>
         public byte[] ToMessageBytes()
         {
-            byte[] ret = new byte[LENGTH + sizeof(int)];
+            byte[] ret = new byte[LENGTH + sizeof(int) + sizeof(bool)];
 
             BitConverter.GetBytes(LENGTH).CopyTo(ret, 0);
-            BODY?.CopyTo(ret, sizeof(int));
+            BitConverter.GetBytes(ISSTR).CopyTo(ret, sizeof(int));
+            BODY.CopyTo(ret, sizeof(int) + sizeof(bool));
 
             return ret;
         }
@@ -39,6 +41,7 @@ namespace PlainMQLib.Models
             Span<byte> span = new Span<byte>(inBytes);
             LENGTH = inBytes.Length;
             BODY = inBytes;
+            ISSTR = false;
         }
 
         /// <summary>
@@ -49,6 +52,29 @@ namespace PlainMQLib.Models
         {
             LENGTH = len;
             BODY = new byte[LENGTH];
+            ISSTR = false;
+        }
+
+        public PlainMessage(byte[] inBytes, int len, bool isStr)
+        {
+            Span<byte> span = new Span<byte>(inBytes);
+            LENGTH = len;
+            BODY = inBytes;
+            ISSTR = isStr;
+        }
+
+        public PlainMessage(int len, bool isStr)
+        {
+            LENGTH = len;
+            BODY = new byte[LENGTH];
+            ISSTR = isStr;
+        }
+
+        public PlainMessage(string s)
+        {
+            BODY = Encoding.UTF8.GetBytes(s);
+            LENGTH = BODY.Length;
+            ISSTR = true;
         }
     }
 }

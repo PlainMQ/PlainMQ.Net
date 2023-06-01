@@ -7,15 +7,15 @@ using System.Threading.Tasks;
 
 namespace PlainMQLib.ThreadManagement.ThreadTypes
 {
-    public interface IManagedThread
+    internal interface IManagedThread
     {
-        public void ThreadAction();
+        internal void ThreadAction();
 
-        public ManagedThreadStatus Status { get; internal set; }
+        internal ManagedThreadStatus Status { get; set; }
 
-        public ParameterizedThreadStart? Action { get; set; }
+        internal ParameterizedThreadStart? Action { get; set; }
 
-        public ThreadClass InvokeClass { get; set; }
+        internal ThreadClass InvokeClass { get; set; }
 
         public int ID { get; set; }
         public string? Name { get; set; }

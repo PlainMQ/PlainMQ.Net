@@ -11,11 +11,11 @@ namespace PlainMQLib.ThreadManagement.ThreadTypes
     /// 
     /// On creation, each thread will manage it's own LocalQueue
     /// </summary>
-    public class ManagedQueueThread : ManagedThreadBase
+    internal class ManagedQueueThread : ManagedThreadBase
     {
-        public Queue<ThreadEvent> LocalQueue { get; set; }
+        internal Queue<ThreadEvent> LocalQueue { get; set; }
 
-        public ManagedQueueThread()
+        internal ManagedQueueThread()
         {
             LocalQueue = new Queue<ThreadEvent>();
 

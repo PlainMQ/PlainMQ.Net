@@ -8,11 +8,11 @@ namespace PlainMQLib.ThreadManagement.ThreadTypes
     /// 
     /// Desired functionality is to write to the resident NetworkStream
     /// </summary>
-    public class NetworkStreamManagedQueueThread : ManagedQueueThread, IDisposable
+    internal class NetworkStreamManagedQueueThread : ManagedQueueThread, IDisposable
     {
         internal NetworkStream NStream { get; set; }
 
-        public NetworkStreamManagedQueueThread(NetworkStream nStream, bool isWriter)
+        internal NetworkStreamManagedQueueThread(NetworkStream nStream, bool isWriter)
         {
             NStream = nStream;
             InvokeClass = isWriter ? Models.Enums.ThreadClass.BROADCAST : Models.Enums.ThreadClass.READER;
