@@ -11,7 +11,8 @@
     <RepositoryType>git</RepositoryType>
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
     <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
-    <Version>1.0.2</Version>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <Version>1.0.3</Version>
   </PropertyGroup>
 
   <ItemGroup>
@@ -20,6 +21,7 @@
       <PackagePath>\</PackagePath>
     </None>
     <None Include="LICENSE.txt" Pack="true" PackagePath=""/>
+    <None Include="README.md" Pack="true" PackagePath=""/>
   </ItemGroup>
 
 </Project>
