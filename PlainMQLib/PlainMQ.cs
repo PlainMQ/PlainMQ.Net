@@ -20,7 +20,7 @@ namespace PlainMQLib
     /// <br/>    3. Receive bytes
     /// <br/>    4. Receive string
     ///     
-    /// <br/><br/> Note that any message that is sent is not received back to the sender
+    /// <br/><br/> Note that any message that is sent is not received back at the sender
     /// 
     /// </summary>
     public static class PlainMQ
