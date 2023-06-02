@@ -4,7 +4,7 @@
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <Copyright>2023 Alek Gallo</Copyright>
+    <Copyright>Copyright (c) Alek Gallo 2023</Copyright>
     <PackageProjectUrl>https://github.com/PlainMQ</PackageProjectUrl>
     <PackageIcon>logo.png</PackageIcon>
     <RepositoryUrl>https://github.com/PlainMQ/PlainMQ.Net</RepositoryUrl>
