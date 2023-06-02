@@ -75,7 +75,7 @@ namespace PlainMQLib
             ManagedThreadPool.Broadcast(new ThreadEvent
             {
                 Class = ThreadClass.BROADCAST,
-                EventPayload = new PlainMessage(v)
+                EventPayload = new PlainMessage(strMsg)
             });
         }
 
